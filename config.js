@@ -4,7 +4,7 @@ let config = {};
 config.dbConfig = {};
 
 config.dbConfig.port = 27017;
-config.dbConfig.hostname = "192.168.0.4";
+config.dbConfig.hostname = "localhost";
 config.dbConfig.url = `mongodb://${
   config.dbConfig.hostname
   }:${config.dbConfig.port.toString()}`;
