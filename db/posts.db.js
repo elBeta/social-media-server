@@ -13,6 +13,16 @@ const getPosts_DB = async () => {
   }
 };
 
+const getPost_DB = async(id)=>{
+  try{
+    const post = await connection.db.collection(dbConfig.postsCollectionName).findOne({id})
+    return Promise.resolve(post) 
+  }catch(err){
+    return Promise.reject(err)
+  }
+}
+
 module.exports = {
-  getPosts_DB
+  getPosts_DB,
+  getPost_DB
 };
