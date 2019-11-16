@@ -13,9 +13,9 @@ const getPosts_DB = async () => {
   }
 };
 
-const getPost_DB = async(id)=>{
+const getPost_DB = async(_id)=>{
   try{
-    const post = await connection.db.collection(dbConfig.postsCollectionName).findOne({id})
+    const post = await connection.db.collection(dbConfig.postsCollectionName).findOne({_id})
     return Promise.resolve(post) 
   }catch(err){
     return Promise.reject(err)

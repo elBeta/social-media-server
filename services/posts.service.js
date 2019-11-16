@@ -10,9 +10,9 @@ const retrievePosts = async () => {
   }
 };
 
-const retrievePost = async(id)=>{
+const retrievePostbyId = async(_id)=>{
   try{
-    return getPost_DB(id)
+    return getPost_DB(_id)
   }catch(err){
     return Promise.reject(err)
   }
@@ -20,5 +20,5 @@ const retrievePost = async(id)=>{
 
 module.exports = {
   retrievePosts,
-  retrievePost
+  retrievePostbyId
 };

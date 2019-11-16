@@ -1,4 +1,4 @@
-const { retrievePosts,retrievePost } = require("../services/posts.service");
+const { retrievePosts,retrievePostbyId } = require("../services/posts.service");
 
 const getPosts = async (req, res, next) => {
   try {
@@ -10,10 +10,10 @@ const getPosts = async (req, res, next) => {
   }
 };
 
-const getPostId = async(req, res, next)=>{
+const getPostbyId = async(req, res, next)=>{
   try{
     const _id = req.params.id;
-    const post = await retrievePosts(_id)
+    const post = await retrievePostbyId(_id)
     res.json(post)
   }catch(err){
     res.status(500).send(err.message)
@@ -21,5 +21,5 @@ const getPostId = async(req, res, next)=>{
 }
 
 module.exports = {
-  getPosts,getPostId
+  getPosts,getPostbyId
 };
